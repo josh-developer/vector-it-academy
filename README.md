@@ -1,1 +1,1 @@
-# VectorItAcademy
+# Vector IT Academy
