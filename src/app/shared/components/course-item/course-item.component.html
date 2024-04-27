@@ -1,8 +1,18 @@
 <article
-  class="min-h-52 rounded border border-solid border-brzinc p-4 duration-150 hover:border-orange"
+  class="min-h-52 relative rounded border border-solid border-brzinc p-4 duration-150 hover:border-orange"
   data-aos="zoom-in"
   data-aos-duration="1000"
 >
+  @if (purchased) {
+  <div class="w-full absolute top-1 left-1">
+    <button
+      class="rounded-full p-1 cursor-pointer hover:opacity-70 transition-all text-gray-700"
+    >
+      <mat-icon class="leading-none">info</mat-icon>
+    </button>
+  </div>
+  }
+
   <div class="inner mb-5 flex flex-col flex-nowrap items-center justify-start">
     <img class="h-12 w-12 object-contain" [src]="item.imgSrc" alt="" />
     <h3 class="!m-0 line-clamp-1 font-bold text-gray-700">{{ item.name }}</h3>
