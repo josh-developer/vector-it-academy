@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit, inject } from "@angular/core";
 import { RouterLink } from "@angular/router";
 
 @Component({
@@ -11,9 +11,7 @@ import { RouterLink } from "@angular/router";
       <span class="four"><span class="screen-reader-text">4</span></span>
     </section>
     <div class="link-container">
-      <a target="_blank" [routerLink]="['/students']" class="more-link"
-        >Ortga qaytish</a
-      >
+      <a [routerLink]="['/students']" class="more-link">Ortga qaytish</a>
     </div>`,
   standalone: true,
   imports: [RouterLink],
