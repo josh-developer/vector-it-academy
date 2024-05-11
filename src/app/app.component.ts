@@ -1,12 +1,17 @@
 import { Component } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
 import { NavbarComponent } from "./shared/components/navbar/navbar.component";
+import { MatProgressBarModule } from "@angular/material/progress-bar";
 
 @Component({
   selector: "app-root",
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent],
+  imports: [RouterOutlet, NavbarComponent, MatProgressBarModule],
   template: `
+    @if(false) {
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    }
+
     <app-navbar></app-navbar>
     <main class="p-3">
       <router-outlet />

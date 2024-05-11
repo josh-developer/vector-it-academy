@@ -1,13 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
+import { ICourse } from "@models/shared/i-course";
 
 @Component({
-    selector: 'course-details',
-    template: 'Course details',
-    standalone: true
+  selector: "course-details",
+  template: "Course details",
+  standalone: true,
 })
+export default class CourseDetailsComponent implements OnInit {
+  private route = inject(ActivatedRoute);
 
-export class CourseDetailsComponent implements OnInit {
-    constructor() { }
+  courseDetails?: ICourse;
 
-    ngOnInit() { }
+  ngOnInit() {
+    this.route.queryParams.subscribe((queryParams) => {
+      console.log(queryParams);
+    });
+
+    this.courseDetails = this.route.snapshot.data["courseDetails"];
+    console.log(this.courseDetails);
+  }
 }
